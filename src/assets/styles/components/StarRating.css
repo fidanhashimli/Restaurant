@@ -1,0 +1,69 @@
+.star-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.stars {
+  display: flex;
+  gap: 0.35rem;
+  justify-content: center;
+}
+
+.star {
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.star.filled {
+  color: #ffd700;
+  filter: drop-shadow(0 0 2px rgba(255, 215, 0, 0.4));
+}
+
+.star.half {
+  color: #ffd700;
+  filter: drop-shadow(0 0 2px rgba(255, 215, 0, 0.4));
+}
+
+.star.empty {
+  color: transparent;
+  stroke: #ffd700;
+  stroke-width: 40;
+  fill: transparent;
+  filter: drop-shadow(0 0 1px rgba(255, 215, 0, 0.4));
+}
+
+.rating-value {
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffd700;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0;
+  white-space: nowrap;
+  animation: fadeIn 0.3s ease forwards;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.star-rating:hover .star {
+  transform: scale(1.15);
+}
+
+.star:hover {
+  transform: scale(1.25) rotate(5deg) !important;
+} 
